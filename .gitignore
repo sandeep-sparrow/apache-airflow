@@ -1,0 +1,68 @@
+# Byte-compiled files and logs
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.sqlite3
+*.db
+
+# Airflow-specific files
+airflow.cfg
+unittests.cfg
+webserver_config.py
+*.pid
+
+# Environment and dependencies
+.env
+*.env
+.venv/
+.envrc
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Secrets and credentials
+secrets.json
+secrets.yaml
+dags/secrets/
+
+# Airflow database migrations
+migrations/
+
+# Python virtual environments
+venv/
+ENV/
+env/
+
+# DAG files with sensitive data
+dags/*.key
+dags/*.pem
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Airflow logs and temporary data
+logs/
+tmp/
+logs/scheduler.log
+logs/webserver.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build and package files
+build/
+dist/
+*.egg
+*.wheel
+
+# Kubernetes/Airflow Helm files (if applicable)
+k8s/*.yaml
+helm-charts/
+
+# VSCode-specific files
+.vscode/
+
+# IntelliJ IDEA specific files
+.idea/
