@@ -28,7 +28,14 @@ def data_transformation_storage_pipeline():
         return df.to_json()
 
     @task
-    def create_table():
+    def read_car_categories():
+        df = pd.read_csv('/Users/prajapat21/airflow/datasets/car_categories.csv')
+
+        return df.to_json()
+
+
+    @task
+    def create_table_car_data():
         sqlite_operator = SqliteOperator(
             task_id='create_table',
             sql = r"""
@@ -73,6 +80,6 @@ def data_transformation_storage_pipeline():
 
             sqlite_operator.execute(context=None)
 
-    read_dataset() >> create_table() >> insert_selected_data()
+    read_dataset() >> create_table_car_data() >> insert_selected_data()
 
 data_transformation_storage_pipeline()
