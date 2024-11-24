@@ -67,7 +67,7 @@ with DAG(
         python_callable=read_csv_file
     )
 
-    determine_branch_task = PythonOperator(
+    determine_branch_task = BranchPythonOperator(
         task_id='determine_branch_task',
         python_callable=determine_branch
     )
